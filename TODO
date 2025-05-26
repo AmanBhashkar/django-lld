@@ -1,0 +1,5 @@
+1. H.W: Add a filter based get API where you apply filter on the products, it can be on price name.
+2. CREATE MxM table, for product and orders
+3. Create an update api
+4. Write two middlewares, return json data from first middleware, whatever is the response of first middleware pass it to second middleware and log it. get_response() 
+5. Integerate Razonpay apis for accepting payment.

@@ -26,7 +26,6 @@ def hello_world(request):
     return HttpResponse('Hello World')
 
 
-# @swagger_auto_schema(method='get') 
 @api_view(["GET"])
 def get_products(requests):
     data = Products.objects.all()
@@ -41,3 +40,4 @@ def add_products(request):
         serializer.save()  # Save to DB
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
