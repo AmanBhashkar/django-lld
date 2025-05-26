@@ -10,3 +10,8 @@ wheels/
 .venv
 db.sqlite3
 .lld/
+.env
+.env.local
+./TODO
+*.log
+
