@@ -1,7 +1,7 @@
 # from django.shortcuts import render
 from django.conf import settings
 from django.http import HttpResponse
-from store_products.models import Products, Order, OrderItem
+from store_products.models import Products, Order
 from django.db import transaction
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -11,7 +11,6 @@ from store_products.serializer import (
     ProductSerializer,
     OrderSerializer,
     CreateOrderSerializer,
-    OrderItemSerializer,
 )
 from rest_framework import status
 from drf_spectacular.utils import extend_schema, OpenApiParameter
@@ -456,7 +455,7 @@ def create_razorpay_order(request):
 )
 @api_view(["POST"])
 def verify_razorpay_payment(request):
-    payment_logger.info(f"Verify Razorpay payment endpoint accessed")
+    payment_logger.info("Verify Razorpay payment endpoint accessed")
     try:
         client = razorpay.Client(
             auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET)

@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from store_products.models import Products, Order, OrderItem
-from django.contrib.auth.models import User
 
 
 class ProductSerializer(serializers.ModelSerializer):
